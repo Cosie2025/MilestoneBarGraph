@@ -6,15 +6,15 @@ import os
 app = Flask(__name__, static_folder='static')
 
 # Define X-Axis Labels
-MILESTONES = ["A0 - A1", "A1 - A2", "A2 - B1"]
+MILESTONES = ["A0 - A1", "A1 - A2", "A2 - B1", "B1 - B2", "B2"]
 
 def create_milestone_chart(durations, filename):
     y_values = durations  # Y-axis values (months)
     x_values = np.arange(len(MILESTONES))  # X-axis positions
     
     # Create the bar chart
-    fig, ax = plt.subplots(figsize=(6, 4))  # Set figure size
-    bars = ax.bar(x_values, y_values, color=["#FF5733", "#33FF57", "#3357FF"], alpha=0.8)
+    fig, ax = plt.subplots(figsize=(8, 4))  # Set figure size
+    bars = ax.bar(x_values, y_values, color=["#FF5733", "#33FF57", "#3357FF", "#F4A261", "#2A9D8F"], alpha=0.8)
     
     # Add labels and titles
     ax.set_xticks(x_values)
@@ -44,7 +44,9 @@ def generate_chart():
         durations = [
             data.get("A0_A1", 0),
             data.get("A1_A2", 0),
-            data.get("A2_B1", 0)
+            data.get("A2_B1", 0),
+            data.get("B1_B2", 0),
+            data.get("B2", 0)
         ]
         
         if not all(isinstance(duration, (int, float)) for duration in durations):
