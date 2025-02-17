@@ -67,7 +67,7 @@ if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)
 
 # requirements.txt
-# Flask==2.0.3
-# matplotlib==3.5.1
-# numpy==1.21.2
-# gunicorn==20.1.0
+# Flask
+# matplotlib
+# numpy
+# gunicorn
