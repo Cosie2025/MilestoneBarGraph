@@ -21,7 +21,7 @@ def create_milestone_chart(durations, filename):
     ax.set_xticklabels(MILESTONES, fontsize=10)
     ax.set_yticks(range(1, max(y_values) + 2))  # Adjust Y-axis limits dynamically
     ax.set_ylabel("Tháng", fontsize=12)
-    ax.set_title("Biểu đồ tiến trình mốc quan trọng", fontsize=14)
+    ax.set_title("Biểu đồ tiến trình mốc quan trọng ", fontsize=14)
     
     # Display values on top of bars
     for bar in bars:
